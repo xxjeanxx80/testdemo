@@ -70,17 +70,33 @@
     "moduleFileExtensions": [
       "js",
       "json",
-      "ts"
+      "ts",
+      "tsx"
     ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/frontend"
+    ],
+    "testMatch": [
+      "**/*.spec.ts",
+      "**/*.spec.tsx"
+    ],
     "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
+      "^.+\\.(t|j)sx?$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "**/*.(t|j)s"
+      "src/**/*.(t|j)s",
+      "frontend/**/*.(t|j)sx?"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^next/router$": "<rootDir>/frontend/stubs/next-router.ts",
+      "^next/link$": "<rootDir>/frontend/stubs/next-link.tsx",
+      "^next/head$": "<rootDir>/frontend/stubs/next-head.tsx",
+      "^react$": "<rootDir>/frontend/stubs/react.ts",
+      "^react/jsx-runtime$": "<rootDir>/frontend/stubs/react-jsx-runtime.ts",
+      "^@tanstack/react-query$": "<rootDir>/frontend/stubs/@tanstack/react-query.tsx"
+    }
   }
 }

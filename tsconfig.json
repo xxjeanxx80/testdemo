@@ -20,6 +20,38 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
+    "paths": {
+      "@tanstack/react-query": [
+        "frontend/stubs/@tanstack/react-query"
+      ],
+      "react": [
+        "frontend/stubs/react"
+      ],
+      "react/jsx-runtime": [
+        "frontend/stubs/react-jsx-runtime"
+      ],
+      "next/router": [
+        "frontend/stubs/next-router"
+      ],
+      "next/link": [
+        "frontend/stubs/next-link"
+      ],
+      "next/head": [
+        "frontend/stubs/next-head"
+      ]
+    },
+    "typeRoots": [
+      "./types"
+    ]
   }
 }
